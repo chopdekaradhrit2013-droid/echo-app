@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-echo-bg: #0D0D0D;
+  --color-echo-blue: #4F8CFF;
+  --color-echo-purple: #8B5CF6;
+  --color-echo-card: #161616;
+  --color-echo-border: #2A2A2A;
+  --font-sans: "Inter", "SF Pro Display", system-ui, sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: #0D0D0D;
+  color: white;
+  font-family: var(--font-sans);
+  overscroll-behavior: none;
+}
+
+.glass {
+  background: rgba(22, 22, 22, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-strong {
+  background: rgba(30, 30, 30, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.echo-logo {
+  background: linear-gradient(135deg, #4F8CFF 0%, #A855F7 100%);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 0.22s ease;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 12px rgba(79, 140, 255, 0.45); }
+  50% { box-shadow: 0 0 22px rgba(79, 140, 255, 0.7); }
+}
+
+.create-btn {
+  animation: pulse-glow 2.4s infinite;
+}
